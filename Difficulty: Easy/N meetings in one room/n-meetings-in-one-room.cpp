@@ -3,32 +3,26 @@ class Solution {
     // Function to find the maximum number of meetings that can
     // be performed in a meeting room.
     int maxMeetings(vector<int>& start, vector<int>& end) {
-        // Your code here
-        int n=end.size();
-        
-        vector<pair<int,int>> v;
-        
-        for(int i=0;i<n;i++){
-            v.push_back({end[i],start[i]});
+        vector<pair<int,int>> p;
+        for(int i=0;i<end.size();i++){
+            p.push_back({start[i], end[i]});
         }
+        sort(p.begin(), p.end(), [](auto &a, auto &b){
+            return a.second < b.second;
+        });
         
-        sort(v.begin(), v.end());
-        // for(auto i: v){
+        int e = -1;
+        int cnt = 0;
+        for(int i=0;i<end.size();i++){
+            if(p[i].first > e){
+                cnt++;
+                e = p[i].second;
+            }
+        }
+        // for(auto i:p){
         //     cout << i.first << " " << i.second << endl;
         // }
         
-        int ans=0;
-        int endd = -1;
-        
-        for(int i=0;i<n;i++){
-            if(v[i].second > endd){
-                ans++;
-                endd= v[i].first;
-            }
-        }
-        
-        
-        
-        return ans;
+        return cnt;
     }
 };
