@@ -1,14 +1,16 @@
 class Solution {
   public:
     int getSecondLargest(vector<int> &arr) {
-        set<int> s;
-        for(auto i:arr) s.insert(i);
+        // code here
+        int l=INT_MIN;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i] > l) l=arr[i];
+        }
+        int sl =-1;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i] > sl && arr[i] != l) sl=arr[i];
+        }
         
-        vector<int> v;
-        
-        for(auto i:s) v.push_back(i);
-        if(v.size() < 2) return -1;
-        
-        return v[v.size()-2];
+        return sl;
     }
 };
