@@ -7,6 +7,5 @@ class Solution {
         reverse(arr.begin(), arr.end()-1);
         reverse(arr.end()-1, arr.end());
         reverse(arr.begin(), arr.end());
-        
     }
 };
