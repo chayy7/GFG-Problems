@@ -2,22 +2,15 @@ class Solution {
   public:
     vector<int> nextLargerElement(vector<int>& arr) {
         // code here
-        int n=arr.size();
-        vector<int> ans(n,-1);
-        stack<int> s;
-        for(int i=0;i<n;i++){
-            if(s.empty()){
-                s.push(i);
-            }else{
-                while(!s.empty() && arr[i] > arr[s.top()]){
-                    ans[s.top()] = arr[i];
-                    s.pop();
-                }
-                s.push(i);
-                
-            }
+        vector<int> v(arr.size(), -1);
+        stack<int> st;
+        for(int i=arr.size()-1; i>= 0;i--){
+            while(!st.empty() && arr[i] >= st.top()) st.pop();
+            
+            if(!st.empty()) v[i] = st.top();
+            
+            st.push(arr[i]);
         }
-        
-        return ans;
+        return v;
     }
 };
