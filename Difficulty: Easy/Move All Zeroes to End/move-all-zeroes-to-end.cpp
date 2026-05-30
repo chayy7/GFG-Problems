@@ -2,23 +2,17 @@ class Solution {
   public:
     void pushZerosToEnd(vector<int>& arr) {
         // code here
-        int zeroes_cnt=0;
-        for(auto i:arr){
-            if(i == 0) zeroes_cnt++;
+        int ptr =0;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i] != 0){
+                arr[ptr] = arr[i];
+                ptr++;
+            }
         }
         
-        
-        vector<int> ans;
-        
-        for(auto i:arr){
-            if(i != 0) ans.push_back(i);
+        while(ptr < arr.size()){
+            arr[ptr] = 0;
+            ptr++;
         }
-        
-        while(zeroes_cnt != 0){
-            ans.push_back(0);
-            zeroes_cnt--;
-        }
-        arr=ans;
-        // return ans;
     }
 };
