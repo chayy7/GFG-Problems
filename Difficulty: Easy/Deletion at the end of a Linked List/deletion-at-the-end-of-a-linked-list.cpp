@@ -1,24 +1,35 @@
+/*
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+*/
 class Solution {
   public:
     Node* removeLastNode(Node* head) {
-        if(head == NULL) return NULL;
-
-        if(head->next == NULL){
-            delete head;
-            return NULL;
+        // code here
+        if(head == nullptr || head->next == nullptr){
+            return nullptr;
         }
-
+        
+        
         Node* temp = head;
-        Node* prev = NULL;
-
-        while(temp->next != NULL){
-            prev = temp;
+        Node* prev = nullptr;
+        
+        while(temp->next != nullptr){
+            prev=  temp;
             temp = temp->next;
         }
-
-        delete temp;
-        prev->next = NULL;
-
+        prev->next = nullptr;
+        
+        
         return head;
+        
     }
 };
