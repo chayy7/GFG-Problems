@@ -2,18 +2,16 @@ class Solution {
   public:
     bool twoSum(vector<int>& arr, int target) {
         // code here
-        map<int,int> mpp;
         
-        for(int i=0;i<arr.size();i++){
-            int need = target- arr[i];
-            if(mpp.find(need) != mpp.end()){
+        int n=arr.size();
+        map<int,int> mpp;
+        for(int i=0;i<n;i++){
+            int needed = target - arr[i];
+            if(mpp.find(needed) != mpp.end()){
                 return true;
             }
             mpp[arr[i]] = i;
-            
         }
-        
-        
         return false;
     }
 };
