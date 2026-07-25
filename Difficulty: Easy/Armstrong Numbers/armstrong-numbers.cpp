@@ -1,19 +1,14 @@
-// User function Template for C++
 class Solution {
   public:
     bool armstrongNumber(int n) {
         // code here
-        int cnt = int(log10(n))+1;
-        
-        int ans = 0;
-        int o = n;
-        while(o > 0){
-            int rem = o % 10;
-            ans += pow(rem,cnt);
-            o /= 10;
-            
+        int sum=0;
+        int o=n;
+        int len = log10(n)+1;
+        while(n > 0){
+            sum += pow(n%10, len);
+            n /= 10;
         }
-        
-        return ans == n;
+        return sum == o;
     }
 };
