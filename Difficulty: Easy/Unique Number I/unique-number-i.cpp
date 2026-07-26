@@ -3,9 +3,7 @@ class Solution {
     int findUnique(vector<int> &arr) {
         // code here
         int xorr = 0;
-        for(auto i:arr){
-            xorr ^= i;
-        }
+        for(auto i:arr) xorr^= i;
         return xorr;
     }
 };
