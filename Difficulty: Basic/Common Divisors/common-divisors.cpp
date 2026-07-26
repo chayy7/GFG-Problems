@@ -1,15 +1,19 @@
-// User function Template for C++
 class Solution {
   public:
-    long long int commDiv(long long int a, long long int b) {
+    int commDiv(int a, int b) {
         // code here
-        long long cnt=0;
-        for(int i = 1;i<=max(a,b);i++){
-            if(a% i == 0 && b%i == 0){
-                cnt++;
-            }
-        }
+        int gcd = __gcd(a,b);
         
+        int cnt = 0;
+        for(int i=1;i*i<=gcd;i++){
+            if(gcd% i == 0){
+                cnt++;
+                if(gcd/i != i){
+                    cnt++;
+                }
+            }
+            
+        }
         return cnt;
     }
 };
