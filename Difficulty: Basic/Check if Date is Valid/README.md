@@ -1,0 +1,10 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/check-if-date-is-valid0050/1">Check if Date is Valid</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO" style="--text-color: var(--problem-text-color);"><p><span style="font-size: 18px;"><span style="font-size: 18px;">Given three integers <strong>d</strong>, <strong>m</strong>, and <strong>y</strong> representing a date in the format <strong>dd/mm/yyyy</strong>, determine whether the date is valid or not.&nbsp;</span></span></p>
+<p><span style="font-size: 18px;">A valid date must lie between 01/01/1800 and 31/12/9999 (inclusive) and satisfy the correct number of days for the given month and year.</span></p>
+<p><span style="font-size: 18px;"><strong>Examples:</strong></span></p>
+<pre><span style="font-size: 18px;"><strong style="font-size: 18px;">Input: </strong><span style="font-size: 18px;">d = 23, </span><span style="font-size: 18px;">m</span><span style="font-size: 18px;"> = 8, </span><span style="font-size: 18px;">y</span><span style="font-size: 18px;"> = 2003
+</span><strong><span style="font-size: 18px;">Output:</span> </strong></span><span style="font-size: 18px;">true</span>
+<span style="font-size: 18px;"><strong><span style="font-size: 18px;">Explanation:</span> </strong></span><span style="font-size: 18px;">The given date 23/8/2003 is valid</span><span style="font-size: 18px;">.</span></pre>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>d = 30, m = 2, y = 1700</span>
+<span style="font-size: 18px;"><strong><span style="font-size: 18px;">Output:</span> </strong></span><span style="font-size: 18px;">false</span>
+<span style="font-size: 18px;"><strong><span style="font-size: 18px;">Explanation:</span> </strong></span><span style="font-size: 18px;">The given date 30/2/1700 is invalid.</span></pre>
+<p><span style="font-size: 18px;"><strong>Constraints:</strong></span><br><span style="font-size: 18px;">1 ≤ d, m, y ≤ 10<sup>4</sup></span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Mathematical</code>&nbsp;
